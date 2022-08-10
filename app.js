@@ -14,6 +14,8 @@ var menuRouter = require('./routes/menu');
 var agendaRouter = require('./routes/agenda');
 var nosotrosRouter = require('./routes/nosotros');
 
+
+
 var app = express();
 
 // view engine setup
@@ -29,7 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
   secret: 'yamaha62',
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: true,
 }));
 
  app.use('/', indexRouter);
@@ -38,7 +40,9 @@ app.use('/menu', menuRouter);
 app.use('/agenda', agendaRouter);
 app.use('/nosotros', nosotrosRouter);
 
-
+pool.query('select * from empleados').then(function(resultados){
+  console.log(resultados);
+})
 
 app.get('/', function (req, res) {
   var conocido = Boolean(req.session.nombre);
@@ -46,7 +50,7 @@ app.get('/', function (req, res) {
     title: 'sesiones en express.js',
     conocido: conocido,
     nombre: req.session.nombre
-  })})
+  })});
 
 app.post('/ingresar', function (req, res) {
   if (req.body.nombre){
