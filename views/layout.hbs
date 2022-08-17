@@ -9,14 +9,68 @@
     <link rel='stylesheet' type='text/css' href='/stylesheets/style.css'/>
   </head>
   <body>
-    <nav>
-      <ul>
-        <a href="/"></a>
-        <a href="/menu"></a>
-        <a href="/agenda"></a>
-        <a href="/nosotros"></a>
-      </ul>
-    </nav>
+      <header>
+        <nav class="navbar fixed-top navbar-expand-lg bg-black" id="navpc">
+          <div class="container-fluid">
+            <div class="logocontainer"><a href="/"><img src="images/logokow.jpg" class="logo"></a></div>
+             <div class="botonera">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active link-light" aria-current="page" href="/">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link link-light" href="/menu">Menu</a>
+                </li>
+                <li class="nav-item dropdown" id="dropmenu">
+                  <a class="nav-link dropdown-toggle link-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Agenda Cultural
+                  </a>
+                  <div class="dropdown-menu bg-black" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item link-light" href="/agenda">Conciertos y eventos</a>
+                    <a class="dropdown-item link-light" href="#">Grabaciones</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item link-light" href="#">¿Queres organizar algo con nosotros?</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-light" href="./admin/login" role="button">Ingresar</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <nav class="navbar fixed-top navbar-dark shadow p-3 mb-1 bg-black rounded" id="navresponsive">
+            <a href="/"><img src="images/logokow.jpg" class="logo"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="/">Inicio<span class="sr-only"></span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/menu">Menu</a>
+              </li>
+              <li class="nav-item dropdown" id="dropmenu">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Agenda Cultural</a>
+                <div class="dropdown-menu bg-black" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/agenda">Conciertos y eventos</a>
+                  <a class="dropdown-item" href="#">Grabaciones</a>
+                  <a class="dropdown-item" href="#">¿Queres organizar algo con nosotros?</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/nosotros" tabindex="-1" aria-disabled="true">Sobre Nosotros</a>
+              </li>
+            </ul>
+            <div class="container-fluid" id="container-login">
+              <a class="btn btn-primary" href="./admin/login" role="button">Ingresar</a>
+            </div>
+          </div>
+        </nav>
+      </header>
    {{{body}}} 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

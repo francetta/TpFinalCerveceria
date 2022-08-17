@@ -8,13 +8,15 @@ var session = require('express-session')
 require('dotenv').config();
 var pool = require('./models/bd');
 
+
+
 var indexRouter = require('./routes/index');
 //var usersRouter = require('./routes/users');
 var menuRouter = require('./routes/menu');
 var agendaRouter = require('./routes/agenda');
 var nosotrosRouter = require('./routes/nosotros');
-
-
+var loginRouter = require('./routes/admin/login');
+var adminRouter = require('./routes/admin/novedades');
 
 var app = express();
 
@@ -28,6 +30,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 app.use(session({
   secret: 'yamaha62',
   resave: false,
@@ -40,9 +43,9 @@ app.use('/menu', menuRouter);
 app.use('/agenda', agendaRouter);
 app.use('/nosotros', nosotrosRouter);
 
-pool.query('select * from empleados').then(function(resultados){
-  console.log(resultados);
-})
+//pool.query('select * from empleados').then(function(resultados){
+// console.log(resultados);})
+
 
 app.get('/', function (req, res) {
   var conocido = Boolean(req.session.nombre);
@@ -59,6 +62,8 @@ app.post('/ingresar', function (req, res) {
   res.redirect('/');
 });
   
+app.use('/admin/login', loginRouter);
+app.use('admin/novedades', adminRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

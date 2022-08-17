@@ -1,19 +1,38 @@
 body{
   background-color: rgb(46, 46, 46);
 }
+nav{
+  border-radius: 10px;
+}
 #navresponsive{
   display: none;
 }
-#navpc li{
-  margin-left: 8%; 
-  
+.botonera{
+  margin-right: 55%;
+
 }
-nav p{
-  display: inline;
+.botonera li{
+  margin-left: 20%;
 }
+
+.logo{
+  width: 50%;
+  object-fit: contain;
+  border-radius: 25px;
+}
+.logocontainer{
+  display: inline;  
+}
+
+.button:hover {
+  text-shadow: 0 0 10px rgba(255,255,255,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px rgba(255,255,255,1) , 0 0 40px #00ffff , 0 0 70px #00ffff , 0 0 80px #00ffff , 0 0 100px #00ffff ;
+}
+
+
 .section1{
   background-color:rgb(0, 0, 0) ;
   margin-top: 10%;
+  border-radius: 10px;
 }
 .card-deck{
   margin: 10%;
@@ -35,7 +54,7 @@ nav p{
 .section3{
   margin-top: 10%;
   background-color: black;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 #carouselExampleCaptions img{
   max-height: 300px;
@@ -45,6 +64,7 @@ nav p{
   border-radius: 10px;
 }
 .section4{
+  border-radius: 10px;
   margin-top: 10%;
   margin-bottom: 10%;
   display: grid;
