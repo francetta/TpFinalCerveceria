@@ -37,11 +37,7 @@ app.use(session({
   saveUninitialized: true,
 }));
 
- app.use('/', indexRouter);
-//app.use('/users', usersRouter);
-app.use('/menu', menuRouter);
-app.use('/agenda', agendaRouter);
-app.use('/nosotros', nosotrosRouter);
+
 
 //pool.query('select * from empleados').then(function(resultados){
 // console.log(resultados);})
@@ -62,9 +58,28 @@ app.post('/ingresar', function (req, res) {
   res.redirect('/');
 });
   
+
+
+secured = async(req, res, next) => {
+  try{
+    console.log(req.session.id_usuario);
+    if (req.session.id_usuario){
+      next()
+    } else {
+      res.redirect('admin/login');
+
+    }
+  }catch(error){
+    console.log(error);
+  }
+}  
+ app.use('/', indexRouter);
+//app.use('/users', usersRouter);
+app.use('/menu', menuRouter);
+app.use('/agenda', agendaRouter);
+app.use('/nosotros', nosotrosRouter);
 app.use('/admin/login', loginRouter);
 app.use('admin/novedades', adminRouter);
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

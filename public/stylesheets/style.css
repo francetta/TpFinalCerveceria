@@ -1,6 +1,9 @@
 body{
   background-color: rgb(46, 46, 46);
 }
+.logout{
+  margin-top: 100%;
+}
 nav{
   border-radius: 10px;
 }
@@ -14,7 +17,6 @@ nav{
 .botonera li{
   margin-left: 20%;
 }
-
 .logo{
   width: 50%;
   object-fit: contain;

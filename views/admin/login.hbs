@@ -10,6 +10,9 @@
                 </div>
                 <button class="btn btn-primary" type="submit">Ingresar</button>
             </form>
+            {{#if error}}
+                <p>Usuario o Contraseña Incorrectos</p>
+            {{/if}}
         </div>
     </div>
  </div>

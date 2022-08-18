@@ -1,8 +1,73 @@
-<div class="container" style="margin:50px auto">
-    <div class="row">
-        <div class="col">
-            <p class="text-right">hola {{ usuario }} ! </p>
-        </div>
-    </div>
-</div>
 
+      <header>
+        <nav class="navbar fixed-top navbar-expand-lg bg-black" id="navpc">
+          <div class="container-fluid">
+            <div class="logocontainer"><a href="/"><img src="/images/logokow.jpg" class="logo"></a></div>
+             <div class="botonera">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active link-light" aria-current="page" href="/">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link link-light" href="/menu">Menu</a>
+                </li>
+                <li class="nav-item dropdown" id="dropmenu">
+                  <a class="nav-link dropdown-toggle link-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Agenda Cultural
+                  </a>
+                  <div class="dropdown-menu bg-black" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item link-light" href="/agenda">Conciertos y eventos</a>
+                    <a class="dropdown-item link-light" href="#">Grabaciones</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item link-light" href="#">¿Queres organizar algo con nosotros?</a>
+                  </div>
+                </li>
+                <li>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <p style="float right; margin-top: 50%;">
+                                <a href="admin/login/logout" class="btn btn-danger">Cerrar</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <nav class="navbar fixed-top navbar-dark shadow p-3 mb-1 bg-black rounded" id="navresponsive">
+            <a href="/"><img src="/public/images/logokow.jpg" class="logo"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="/">Inicio<span class="sr-only"></span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/menu">Menu</a>
+              </li>
+              <li class="nav-item dropdown" id="dropmenu">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Agenda Cultural</a>
+                <div class="dropdown-menu bg-black" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/agenda">Conciertos y eventos</a>
+                  <a class="dropdown-item" href="#">Grabaciones</a>
+                  <a class="dropdown-item" href="#">¿Queres organizar algo con nosotros?</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/nosotros" tabindex="-1" aria-disabled="true">Sobre Nosotros</a>
+              </li>
+            </ul>
+            <div class="container-fluid" id="container-login">
+              <a class="btn btn-primary" href="./admin/login" role="button">Ingresar</a>
+            </div>
+            <div class="container-fluid" id="container-closelogin">
+              <a class="btn btn-primary" href="./admin/login" role="button">Ingresar</a>
+            </div>
+          </div>
+        </nav>
