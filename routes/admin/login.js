@@ -4,7 +4,7 @@ var router = express.Router();
 router.get('/', function (req, res, next){
     res.render('admin/login', {
         layout: 'admin/layout',
-        persona: req.session.nombre
+        //persona: req.session.nombre
     });
 });
 
@@ -15,16 +15,16 @@ router.post('/', async (req, res, next) => {
     try{
         var usuario = req.body.usuario;
         var password = req.body.password;
-
         var data = await 
     usuariosModels.getUserByUserNameAndPassword(usuario, password);
-        if(data != undefined) {
+       
+    if(data != undefined) {
             
             req.session.id_usuario = data.id;
             req.session.nombre = data.usuario;
-            req.redirect('/admin/novedades');
+            res.redirect('/admin/novedades');
         } else {
-            res.render('admin/novedades', {
+            res.render('/admin/login', {
                 layout: 'admin/layout',
                 error: true
             });
@@ -35,7 +35,7 @@ router.post('/', async (req, res, next) => {
 })
 router.get('/logout', function (req, res, next){
     req.session.destroy();
-    res.render('/admin/login', {
+    res.render('admin/login', {
         layout: 'admin/layout'
 
     });

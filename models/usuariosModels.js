@@ -10,4 +10,4 @@ async function getUserByUserNameAndPassword(user, password){
         throw error;
     }
 }
-module.exports = {getUserByUserNameAndPassword}
+module.exports = { getUserByUserNameAndPassword }

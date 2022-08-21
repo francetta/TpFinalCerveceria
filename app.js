@@ -60,26 +60,28 @@ app.post('/ingresar', function (req, res) {
   
 
 
-secured = async(req, res, next) => {
+secured = async(req,res,next) => {
   try{
     console.log(req.session.id_usuario);
     if (req.session.id_usuario){
-      next()
+      next();
     } else {
-      res.redirect('admin/login');
+      res.redirect('/admin/login');
 
     }
   }catch(error){
     console.log(error);
   }
 }  
- app.use('/', indexRouter);
+app.use('/', indexRouter);
 //app.use('/users', usersRouter);
 app.use('/menu', menuRouter);
 app.use('/agenda', agendaRouter);
 app.use('/nosotros', nosotrosRouter);
 app.use('/admin/login', loginRouter);
-app.use('admin/novedades', adminRouter);
+app.use('/admin/novedades', secured, adminRouter);
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
