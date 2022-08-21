@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 21-08-2022 a las 20:14:46
+-- Tiempo de generación: 21-08-2022 a las 22:50:57
 -- Versión del servidor: 5.7.36
 -- Versión de PHP: 7.4.26
 
@@ -29,18 +29,18 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE IF NOT EXISTS `usuarios` (
-  `Id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `usuario` varchar(250) NOT NULL,
-  `Password` varchar(250) NOT NULL,
-  PRIMARY KEY (`Id`)
+  `password` varchar(250) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`Id`, `usuario`, `Password`) VALUES
-(2, 'Manuel', '46f8f1e74d36fc278b7f468ffb2f3f9b');
+INSERT INTO `usuarios` (`id`, `usuario`, `password`) VALUES
+(1, 'Manuel', '202cb962ac59075b964b07152d234b70');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
