@@ -7,28 +7,39 @@ body{
 nav{
   border-radius: 10px;
 }
+#navbarSupportedContent{
+  transition: 1.7s;
+}
 #navresponsive{
   display: none;
+  transition: 2s;
 }
 .botonera{
   margin-right: 55%;
-
 }
 .botonera li{
   margin-left: 20%;
 }
 .logo{
-  width: 50%;
+  width: 45%;
   object-fit: contain;
   border-radius: 25px;
 }
 .logocontainer{
   display: inline;  
 }
-
-.button:hover {
-  text-shadow: 0 0 10px rgba(255,255,255,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px rgba(255,255,255,1) , 0 0 40px #00ffff , 0 0 70px #00ffff , 0 0 80px #00ffff , 0 0 100px #00ffff ;
+.button-links{
+  position: fixed;
+  margin-left: 92%;
+  z-index: 10;
 }
+
+.button-links img{
+  object-fit: contain;
+  width: 35%;
+  border-radius: 8px;
+}
+
 
 .section2{
   margin-top: 25%;
@@ -99,7 +110,6 @@ h3{
 }
 
 footer{
-  height: 100%;
   background-color: rgb(39,39,50);
   float: bottom;
 }
@@ -115,10 +125,31 @@ h6{
   padding: 2%;
   color: black;
 }
-.imgcontainerfooter{
-  display: block;
+footer img{
+  width: 15%;
+  margin: 2% auto;
 }
 
+
+@media screen and (max-width:1024px){
+  #navpc{
+    display: none;
+  }
+  #navresponsive{
+    display: block;
+  }
+  .button-links{
+    width: 20%;
+    margin-top: -12%;
+    margin-left: 85%;
+  }
+  .logo{
+    width: 30%;
+  }
+  footer img{
+    margin: 2% ;
+  }
+}
 @media screen and (max-width:768px){
   #navpc{
     display: none;
@@ -126,8 +157,10 @@ h6{
   #navresponsive{
     display: block;
   }
-  #navbarSupportedContent{
-    transition: 1.7s;
+  .button-links{
+    width: 28%;
+    margin-top: -10%;
+    margin-left: 83%;
   }
   nav button{
     margin-left: 25%;
