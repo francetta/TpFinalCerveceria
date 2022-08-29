@@ -1,14 +1,19 @@
 var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
+var novedadesModels = require('../models/NovedadesModels')
 
-/npo* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+
+/* GET home page. */
+router.get('/', async function(req, res, next) {
+    var novedades = await novedadesModels.getNovedades();
+    novedades = novedades.splice(0,5);
+    res.render('index' , {
+        novedades,
+        title
+    });
 });
 
-
-module.exports = router;
 var nodemailer = require("nodemailer");
 router.post('/', async(req, res, next) => {
     var nombre = req.body.nombre;
@@ -31,8 +36,10 @@ var transport = nodemailer.createTransport({
     }
     });    
 var info = await transport.sendMail(obj);
-
 res.render('index', {
     message: 'Enviado correctamente, turri'
     });
 });
+
+module.exports = router;
+

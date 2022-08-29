@@ -17,7 +17,6 @@ router.post('/', async (req, res, next) => {
         var password = req.body.password;
         var data = await 
     usuariosModels.getUserByUserNameAndPassword(usuario, password);
-       
     if(data != undefined) {
             
             req.session.id_usuario = data.id;
@@ -33,11 +32,10 @@ router.post('/', async (req, res, next) => {
         console.log(error);
     }
 })
-router.get('/logout', function (req, res, next){
+router.get('/logout', function (req, res, next) {
     req.session.destroy();
     res.render('admin/login', {
         layout: 'admin/layout'
-
     });
 });
 
